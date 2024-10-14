@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="home-page flex flex-col items-center justify-center p-6 bg-background absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 space-y-6">
+    <img src="/images/yt_logo_rgb_dark.png" alt="YouTube Logo" class="w-40 h-auto mb-4 animate-bounce" />
+
+    <h1 class="text-4xl font-extrabold text-foreground">Welcome to YouTube</h1>
+    <p class="text-lg text-muted-foreground text-center">
+        Please buy our <a href="https://www.youtube.com/premium" class="text-primary hover:text-primary-foreground transition-colors duration-300"><b>YouTube Premium</b></a>. Yes, we're really desperate at this point.
+    </p>
+
+    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
+        <a href="https://www.youtube.com/premium" class="btn btn-primary hover:btn-secondary transition-all duration-300">
+            Buy YouTube Premium
+        </a>
+        <a href="https://www.youtube.com/premium" class="btn btn-secondary hover:btn-primary transition-all duration-300">
+            Learn More
+        </a>
+    </div>
+
+    
+    <div class="mt-20 flex flex-col items-center space-y-4 self-end">
+        <h2 class="text-xl font-bold text-foreground">Featured Videos</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="card bg-secondary text-secondary-foreground p-3 rounded-lg shadow-md w-60">
+                
+                <a href="https://www.youtube.com/watch?v=iZBIeM2zE-I">
+                    <img src="/images/video2-thumbnail.jpg" alt="Trending Video 1" class="rounded-lg mb-3">
+                    <h3 class="text-md font-semibold">Remember this day… - AMD Ryzen 5000 Series</h3>
+                </a>
+                <p class="text-xs">This is the most popular video on YouTube right now.</p>
+            </div>
+            <div class="card bg-secondary text-secondary-foreground p-3 rounded-lg shadow-md w-60">
+                <a href="https://www.youtube.com/watch?v=nsdo_tcw4VY">
+                    <img src="/images/video1-thumbnail.jpg" alt="Trending Video 2" class="rounded-lg mb-3">
+                    <h3 class="text-md font-semibold">I Ran the Entire Length of Africa</h3>
+                </a>
+                <p class="text-xs">Don't miss this viral hit sweeping the internet.</p>
+            </div>
+            <div class="card bg-secondary text-secondary-foreground p-3 rounded-lg shadow-md w-60">
+                <a href="https://www.youtube.com/watch?v=WcsFHIF-8CM">
+                    <img src="/images/video3-thumbnail.jpg" alt="Trending Video 3" class="rounded-lg mb-3">
+                    <h3 class="text-md font-semibold">Thomas Bergersen - Cruising in Space</h3>
+                </a>
+                <p class="text-xs">The latest in entertainment from your favorite creators.</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+﻿@model List<YouTubeApiProject.Models.YouTubeVideoModel>
+
+<section class="youtube-search-page container mx-auto py-8">
+    <h2 class="text-3xl font-bold mb-6 text-foreground">
+        Search <span class="text-youtube-red">YouTube</span> Videos
+    </h2>
+
+    <!-- Search Form -->
+    <form asp-action="Search" method="post" class="flex items-center mb-8 space-x-4" onsubmit="return preventNewLine()">
+        <input type="text" name="query" placeholder="Search for videos..."
+               class="w-full p-4 rounded-md bg-background text-foreground placeholder:text-muted border border-muted focus:border-primary focus:outline-none"
+               onkeydown="return preventNewLine(event)" />
+        <button type="submit" class="btn btn-search text-button hover:text-hover-button bg-button hover:bg-hover-button transition-colors">Search</button>
+    </form>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            @foreach (var video in Model)
+            {
+                <div class="card bg-background shadow-lg rounded-lg overflow-hidden transition-all transform hover:scale-105">
+                    <img src="@video.ThumbnailUrl" alt="@video.Title" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-foreground mb-2">@video.Title</h3>
+                        <p class="text-muted mb-4">@video.Description</p>
+                        <a href="@video.VideoUrl" target="_blank">
+                            <button type="button" class="btn btn-watch text-button hover:text-hover-button bg-button hover:bg-hover-button w-full text-sm font-bold">Watch</button>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</section>
+
+<script>
+    function preventNewLine(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            event.target.form.submit();
+        }
+    }
+</script>
